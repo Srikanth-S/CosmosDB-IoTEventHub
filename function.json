@@ -1,0 +1,24 @@
+{
+  "bindings": [
+    {
+      "type": "eventHubTrigger",
+      "name": "IoTHubMessages",
+      "direction": "in",
+      "eventHubName": "samples-workitems",
+      "connection": "iot-event-hub_events_IOTHUB",
+      "cardinality": "many",
+      "consumerGroup": "$Default",
+      "dataType": "string"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "outputDocument",
+      "databaseName": "IoTEvents",
+      "collectionName": "events",
+      "createIfNotExists": false,
+      "connectionStringSetting": "iot-event-hub-account_DOCUMENTDB",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
